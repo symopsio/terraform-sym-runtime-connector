@@ -79,8 +79,8 @@ locals {
 module "aws_secretsmgr" {
   count = local.aws_secrets_mgr_count
 
-  source  = "terraform.symops.com/symopsio/secretsmgr-addon/sym"
-  version = ">= 1.3.0"
+  source  = "symopsio/secretsmgr-addon/sym"
+  version = ">= 1.0.0"
 
   environment = local.secrets_mgr_vars["tag_value"]
   tag_name    = local.secrets_mgr_vars["tag_name"]
@@ -99,8 +99,8 @@ resource "aws_iam_role_policy_attachment" "aws_secretsmgr_attach" {
 module "aws_kinesis_firehose" {
   count = local.aws_kinesis_firehose_count
 
-  source  = "terraform.symops.com/symopsio/kinesis-firehose-addon/sym"
-  version = ">= 1.8.0"
+  source  = "symopsio/kinesis-firehose-addon/sym"
+  version = ">= 1.0.0"
 
   environment = var.environment
   tags        = var.tags
@@ -118,8 +118,8 @@ resource "aws_iam_role_policy_attachment" "aws_kinesis_firehose_attach" {
 module "aws_kinesis_data_stream" {
   count = local.aws_kinesis_data_stream_count
 
-  source  = "terraform.symops.com/symopsio/kinesis-data-stream-addon/sym"
-  version = ">= 1.8.0"
+  source  = "symopsio/kinesis-data-stream-addon/sym"
+  version = ">= 1.0.0"
 
   environment = var.environment
   tags        = var.tags
