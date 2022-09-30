@@ -3,7 +3,7 @@ The `symopsio/runtime-connector/sym` module is deprecated as of September 30, 20
 
 ```
 module "runtime_connector" {
-  source  = "symopsio/runtime-connector/sym"
+  source  = "symopsio/runtime-connector/aws"
   version = ">= 1.0.0"
 
   environment = "main"
