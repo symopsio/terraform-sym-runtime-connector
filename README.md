@@ -1,3 +1,15 @@
+# Deprecation Warning
+The `symopsio/runtime-connector/sym` module is deprecated as of September 30, 2022. Please migrate to [`symopsio/runtime-connector/aws`](https://registry.terraform.io/modules/symopsio/runtime-connector/aws/latest). This can be done in your module declarations by replacing the `symopsio/runtime-connector/sym` source argument with `symopsio/runtime-connector/aws`.]
+
+```
+module "runtime_connector" {
+  source  = "symopsio/runtime-connector/sym"
+  version = ">= 1.0.0"
+
+  environment = "main"
+}
+```
+
 # runtime-connector
 
 The `runtime-connector` module provisions the IAM role that a Sym Runtime uses to execute a Flow.
